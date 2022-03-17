@@ -1,4 +1,3 @@
-# The hangman challenge, got challenged by a person, let's do it!
 import random
 
 word_book =["banana"]
