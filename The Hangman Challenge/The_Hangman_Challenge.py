@@ -29,13 +29,11 @@ while restam > 0:
     x = x.upper()
 
     if x in chosen_list:
-        while index < restam:
+        for index, item in enum_word:
             if x == item:
-                index += 1
                 print(f"você acertou a letra: {x} na pos {index}")
             else:
-                index += 1
-                print("letra x")
+                print("x")
     else:
         restam -= 1
         print(f"você errou, restam {restam} erros")
