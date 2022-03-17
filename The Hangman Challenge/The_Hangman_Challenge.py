@@ -1,7 +1,7 @@
 # The hangman challenge, got challenged by a person, let's do it!
 import random
 
-word_book =["Viking Code", "banana", "ownado", "cara bobo"]
+word_book =["banana"]
 
 chosen_word = random.choice(word_book)
 
@@ -9,12 +9,33 @@ size_chosen = len(chosen_word)
 
 chosen_word_fixed = chosen_word.upper()
 
-trys = 0
+chosen_list = list(chosen_word_fixed)
 
-while trys < size_chosen:
-    x = input("digite sair para sair para desistir\nChute uma letra!\n")
-    if x == "sair":
-        break
-    trys += 1
+enum_word = enumerate(chosen_word_fixed)
 
-print("Game Over!")
+index = 0
+
+restam = size_chosen
+
+hits = chosen_list.copy()
+
+hits_fixed = []
+for item in hits:
+    hits_fixed.append("_")
+
+while restam > 0:
+
+    x = input("chute uma letra\n")
+    x = x.upper()
+
+    if x in chosen_list:
+        while index < restam:
+            if x == item:
+                index += 1
+                print(f"você acertou a letra: {x} na pos {index}")
+            else:
+                index += 1
+                print("letra x")
+    else:
+        restam -= 1
+        print(f"você errou, restam {restam} erros")
