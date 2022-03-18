@@ -24,15 +24,23 @@ for item in hits:
 
 while restam > 0:
 
+    print(hits_fixed)
+
+    index = 0
+
     x = input("chute uma letra\n")
     x = x.upper()
 
     if x in chosen_list:
-        for index, item in enum_word:
+        for item in chosen_list:
             if x == item:
-                print(f"você acertou a letra: {x} na pos {index}")
+                print(f"você acertou a letra: {x} no index {index}")
+                #hits_fixed.extend(x)
+                hits_fixed.remove("_")
+                index += 1
             else:
                 print("x")
+                index += 1
     else:
         restam -= 1
         print(f"você errou, restam {restam} erros")
