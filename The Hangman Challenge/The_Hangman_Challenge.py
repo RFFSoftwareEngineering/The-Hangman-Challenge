@@ -35,12 +35,18 @@ while restam > 0:
         for item in chosen_list:
             if x == item:
                 print(f"você acertou a letra: {x} no index {index}")
-                #hits_fixed.extend(x)
-                hits_fixed.remove("_")
+                hits_fixed.insert(index, x)
+                hits_fixed.pop(index + 1)
                 index += 1
             else:
                 print("x")
                 index += 1
+    
     else:
         restam -= 1
         print(f"você errou, restam {restam} erros")
+
+    if hits_fixed == chosen_list:
+        print(hits_fixed)
+        print("Parabéns! Você venceu!")
+        restam = 0
