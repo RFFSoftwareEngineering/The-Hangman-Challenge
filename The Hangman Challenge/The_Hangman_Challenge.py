@@ -47,6 +47,6 @@ while restam > 0:
         print(f"você errou, restam {restam} erros")
 
     if hits_fixed == chosen_list:
-        print(hits_fixed)
-        print("Parabéns! Você venceu!")
+        #print(hits_fixed)
+        #print("Parabéns! Você venceu!")
         restam = 0
