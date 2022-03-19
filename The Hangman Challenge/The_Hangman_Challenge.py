@@ -1,6 +1,6 @@
 import random
 
-word_book =["banana"]
+word_book =["banana", "Viking Code", "Zica das Balada", "Professor Pardal", "computador", "imposto", "sucesso", "Comida", "Mina Louca", "etecetera", "macaco", "pudim", "Ovo Frito", "Novinha Safada", "Palavra"]
 
 chosen_word = random.choice(word_book)
 
@@ -14,8 +14,7 @@ enum_word = enumerate(chosen_word_fixed)
 
 index = 0
 
-restam = size_chosen
-
+restam = 8
 hits = chosen_list.copy()
 
 hits_fixed = []
@@ -44,9 +43,95 @@ while restam > 0:
     
     else:
         restam -= 1
-        print(f"você errou, restam {restam} erros")
+        print(f"você errou, restam {restam - 1} erros")
 
     if hits_fixed == chosen_list:
-        #print(hits_fixed)
-        #print("Parabéns! Você venceu!")
+        print(f"""
+                                    Parabéns você Venceu!                           
+                                    ---------------------
+                                  _ |                   | _                              
+                                 ) )|                   |( (                               
+                                 \ \|      Won!         |/ /                          
+                                  ) )                   ( (                            
+                                 / /|                   |\ \                                
+                                 ) )|                   |( (                           
+                                 |_|\                   /|_|                             
+                                     \                 /                               
+                                      -----------------                              
+                                      )               (                              
+                                      |_______________|                                
+                                {hits_fixed}                                      
+              """)  
         restam = 0
+
+    elif restam == 7:
+        print("""
+                                    Você errou!              
+                                    ______                                
+                                   |      |                                     
+                                   |                                        
+                                   |
+                                   |                                                   
+                                  / \                                                      
+              """)
+    elif restam == 6:
+        print("""
+                                    Você errou!              
+                                    ______                                
+                                   |      |                                     
+                                   |      O                                                            
+                                   |
+                                   |                                                   
+                                  / \                                                      
+              """)
+    elif restam == 5:
+        print("""
+                                    Você errou!              
+                                    ______                                
+                                   |      |                                     
+                                   |      O                                                             
+                                   |      |                              
+                                   |                                                   
+                                  / \                                                      
+              """)
+    elif restam == 4:
+        print("""
+                                    Você errou!              
+                                    ______                                
+                                   |      |                                     
+                                   |      O                                                             
+                                   |      |                                 
+                                   |     /                                                                                        
+                                  / \                                                      
+              """)
+    elif restam == 3:
+        print("""
+                                    Você errou!              
+                                    ______                                
+                                   |      |                                     
+                                   |      O                                                             
+                                   |      |                                 
+                                   |     / \                                                                           
+                                  / \                                                      
+              """)
+    elif restam == 2:
+        print("""
+                                    Você errou!              
+                                    ______                                
+                                   |      |                                     
+                                   |      O                                                             
+                                   |      |-                                                                            
+                                   |     / \                                                                           
+                                  / \                                                      
+              """)
+    elif restam == 1:
+        print("""
+                                    Você errou!              
+                                    ______                                
+                                   |      |                                     
+                                   |      O         game over                                                    
+                                   |     -|-                                                                     
+                                   |     / \                                                                           
+                                  / \                                                      
+              """)
+        break
